@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Scissors
+        </title>
+    </head>
+
+    <body>
+        <h1>Scissors <s>Paper Rock</s></h1>
+        <h3 class = "notice"> <strong>ATTENTION: Unfortunately we are out of paper and rocks so we will have to play with what we have.</strong></h3>
+
+        <h1>You:</h1>
+
+        <p class="err">This option is temporarily out of order. Choose another one.</p>
+
+        <img class = "scissors" src="https://static.vecteezy.com/system/resources/previews/010/366/281/original/scissor-icon-transparent-free-png.png">
+        <br>
+
+        <button onclick = "add_scissors()" id = "scissors">Scissors</button>
+        <button onclick = "fail()" class = "grey"> Paper </button>
+        <button onclick = "fail()" class = "grey"> Rock</button>
+        <p> Pick an option.</p>
+
+        <h1> Opponent:</h1>
+        <img class = "scissors" src="https://static.vecteezy.com/system/resources/previews/010/366/281/original/scissor-icon-transparent-free-png.png">
+        <br>
+
+        <h2 id = "result"></h2>
+
+    </body>
+</html>
+
+<script>
+    function add_scissors() {
+        document.getElementsByClassName("err")[0].style.opacity=0;
+        document.getElementsByClassName("scissors")[0].style.opacity = 100;
+
+        setTimeout(function(){
+            document.getElementsByClassName("scissors")[1].style.opacity = 100;
+
+                document.getElementById("result").innerHTML = "It's a tie!";
+
+
+            }, 1000); 
+
+        }
+
+
+
+    function fail(){
+        document.getElementsByClassName("err")[0].style.opacity=100;
+    }
+</script>
+<style>
+    .grey {
+        background-color: rgba(255, 127, 80, 0.567);
+        color: rgb(147, 147, 147);
+    }
+
+    #scissors {
+        background-color: coral;
+        color: white;
+        
+    }
+
+    .scissors {
+        width: 200px;
+        height: 200px;
+        opacity: 0;
+    }
+
+    .err {
+        opacity: 0;    
+    }
+
+</style>
