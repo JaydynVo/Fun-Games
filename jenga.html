@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Jenga
+        </title>
+    </head>
+
+    <body>
+        <h1>
+            Jenga
+        </h1>
+        <h3> <strong>  Please do not punch the tower. </strong> </h3>
+        <img id = "tower" src="jengafull.png"> 
+        <br>
+        <button onclick = "whoops()">
+            Take Block
+        </button>
+
+        <button onclick="breakTower()"">
+            Punch
+        </button>
+
+        <br>
+        <h3 id = "whoopsies"> <strong></strong> </h3>
+        <h1 id = "result"> <strong></strong> </h1>
+    </body>
+</html>
+
+<style>
+
+    img {
+        width: 362px;
+        height: 559px;
+    }
+</style>
+
+<script>
+
+    function breakTower() {
+
+
+        if(document.getElementById("result").innerHTML=="You Lose") {
+            document.getElementById("tower").src="77.png"  
+        }
+
+        else {
+
+        
+            document.getElementById("tower").src="1.png"
+
+            setTimeout(function(){
+                document.getElementById("tower").src="22.png"
+
+                setTimeout(function(){
+                    document.getElementById("tower").src="333.png"
+
+                    setTimeout(function(){
+                        document.getElementById("tower").src="44.png"
+
+                        setTimeout(function(){
+                            document.getElementById("tower").src="55.png"
+
+                            setTimeout(function(){
+                                document.getElementById("tower").src="77.png"
+
+                                setTimeout(function(){
+
+
+                                document.getElementById("result").innerHTML="You Lose"
+
+                            }, 750); 
+
+                            }, 30); 
+
+                        }, 40); 
+
+                    }, 40); 
+
+                }, 50);
+
+            }, 50); 
+
+        }
+    }
+
+    function whoops() {
+
+        if (document.getElementById("whoopsies").innerHTML=="Whoops! You pressed that button too hard and broke it!") {
+            document.getElementById("whoopsies").innerHTML="Whoops! You pressed that button too hard and broke it!"
+
+
+
+        }
+
+        else {
+        document.getElementById("whoopsies").innerHTML="Whoops! You pressed that button too hard and broke it!"
+        document.getElementsByTagName("button")[0].style.opacity=0
+
+        }
+    }
+
+</script>
